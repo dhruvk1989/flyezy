@@ -3,6 +3,8 @@ import { Search, Plane, Calendar, Users, MapPin, Menu, User } from 'lucide-react
 
 const FlightBookingLayout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isFromSearchOpen, setIsFromSearchOpen] = useState(false);
+  const [isToSearchOpen, setIsToSearchOpen] = useState(false);
 
   return (
     // Outer container with background
@@ -26,10 +28,6 @@ const FlightBookingLayout = () => {
             </div>
             
             <div className="flex items-center gap-4">
-              <button className="hidden md:flex items-center gap-2 text-gray-600 hover:text-blue-600">
-                <User className="w-5 h-5" />
-                Sign In
-              </button>
               <button 
                 className="md:hidden"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -46,7 +44,6 @@ const FlightBookingLayout = () => {
               <a href="#" className="block py-2 text-gray-600">Hotels</a>
               <a href="#" className="block py-2 text-gray-600">Car Rental</a>
               <a href="#" className="block py-2 text-gray-600">Deals</a>
-              <a href="#" className="block py-2 text-gray-600">Sign In</a>
             </div>
           )}
         </div>
@@ -73,7 +70,16 @@ const FlightBookingLayout = () => {
                     type="text"
                     placeholder="From where?"
                     className="w-full focus:outline-none"
+                    onFocus={() => setIsFromSearchOpen(true)}
+                    onBlur={() => setIsFromSearchOpen(false)}
                   />
+                </div>
+                <div className={`${isFromSearchOpen ? 'relative' : 'hidden'} mt-2 bg-white text-blue-600 rounded-lg shadow-lg p-2`}>
+                  <ul>
+                    <li >Option 1</li>
+                    <li>Option 2</li>
+                    <li>Option 3</li>
+                  </ul>
                 </div>
               </div>
 
@@ -84,7 +90,16 @@ const FlightBookingLayout = () => {
                     type="text"
                     placeholder="To where?"
                     className="w-full focus:outline-none"
+                    onFocus={() => setIsToSearchOpen(true)}
+                    onBlur={() => setIsToSearchOpen(false)}
                   />
+                </div>
+                <div className={`${isToSearchOpen ? 'relative' : 'hidden'} mt-2 text-blue-600 bg-white rounded-lg shadow-lg p-2`}>
+                  <ul>
+                    <li >Option 1</li>
+                    <li>Option 2</li>
+                    <li>Option 3</li>
+                  </ul>
                 </div>
               </div>
 
