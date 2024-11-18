@@ -6,6 +6,14 @@ const FlightBookingLayout = () => {
   const [isFromSearchOpen, setIsFromSearchOpen] = useState(false);
   const [isToSearchOpen, setIsToSearchOpen] = useState(false);
 
+  // https://test.api.amadeus.com/v1/shopping/flight-destinations?departureDate=2024-11-15&origin=DEL
+  // https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=PAR&maxPrice=200
+  // grant_type - client_credentials
+  // client_id - eBeKNrGrkxTQlo7blbqv8JlWHsFUHjH7
+  // client_secret - ERDfW9KgiTfRJDgX
+  // https://test.api.amadeus.com/v1/security/oauth2/token
+  // Add the "Amadeus for developers" collection to your postman
+
   return (
     // Outer container with background
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-4">
