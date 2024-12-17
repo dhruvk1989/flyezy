@@ -82,10 +82,15 @@ const FlightBookingLayout = () => {
                     onBlur={() => setIsFromSearchOpen(false)}
                   />
                 </div>
-                <div className={`${isFromSearchOpen ? 'relative' : 'hidden'} mt-2 bg-white text-blue-600 rounded-lg shadow-lg p-2`}>
+                <div className={`${isFromSearchOpen ? 'relative' : 'hidden'} overflow-y-auto max-h-32 mt-2 bg-white text-blue-600 rounded-lg shadow-lg p-2`}>
                   <ul>
                     <li >Option 1</li>
                     <li>Option 2</li>
+                    <li>Option 3</li>
+                    <li>Option 3</li>
+                    <li>Option 3</li>
+                    <li>Option 3</li>
+                    <li>Option 3</li>
                     <li>Option 3</li>
                   </ul>
                 </div>
@@ -102,7 +107,7 @@ const FlightBookingLayout = () => {
                     onBlur={() => setIsToSearchOpen(false)}
                   />
                 </div>
-                <div className={`${isToSearchOpen ? 'relative' : 'hidden'} mt-2 text-blue-600 bg-white rounded-lg shadow-lg p-2`}>
+                <div className={`${isToSearchOpen ? 'relative' : 'hidden'} overflow-y-auto max-h-32 mt-2 text-blue-600 bg-white rounded-lg shadow-lg p-2`}>
                   <ul>
                     <li >Option 1</li>
                     <li>Option 2</li>
